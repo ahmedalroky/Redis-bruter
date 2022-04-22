@@ -20,6 +20,8 @@ parser.add_argument("--port","-P", help="Redis port (default 6379)",default=6379
 parser.add_argument("--host","-H", help="Target Hostname")
 parser.add_argument("--threads","-T", help="Number of threads",default=3,type=int)
 parser.add_argument("--delay","-D", help="Number of threads",default=0,type=int)
+parser.add_argument("--verbose","-V", help="Number of threads",default=False,action="store_true")
+
 args=parser.parse_args()
 threads = []
 words = open(args.wordlist).readlines()
@@ -27,7 +29,8 @@ host =args.host
 port = int(args.port)
 thread_number=int(args.threads)
 def check(hos,password,port=6379):
-    print(f"[*] Checking : {password.strip()} As a Redis Password [*]")
+    if args.verbose :
+        print(f"[*] Checking : {password.strip()} As a Redis Password [*]")
     redis_db = redis.StrictRedis(host=hos, port=port, db=0, password=password)
     try :
         redis_db.info()
