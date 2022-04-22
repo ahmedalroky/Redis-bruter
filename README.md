@@ -1,6 +1,28 @@
 # Redis Bruter
 Simple Redis bruteforce script
+```
+██████╗░███████╗██████╗░██╗░██████╗  ██████╗░██████╗░██╗░░░██╗████████╗███████╗██████╗░
+██╔══██╗██╔════╝██╔══██╗██║██╔════╝  ██╔══██╗██╔══██╗██║░░░██║╚══██╔══╝██╔════╝██╔══██╗
+██████╔╝█████╗░░██║░░██║██║╚█████╗░  ██████╦╝██████╔╝██║░░░██║░░░██║░░░█████╗░░██████╔╝
+██╔══██╗██╔══╝░░██║░░██║██║░╚═══██╗  ██╔══██╗██╔══██╗██║░░░██║░░░██║░░░██╔══╝░░██╔══██╗
+██║░░██║███████╗██████╔╝██║██████╔╝  ██████╦╝██║░░██║╚██████╔╝░░░██║░░░███████╗██║░░██║
+╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝╚═════╝░  ╚═════╝░╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
+######################## Author : Ahmed Alroky ########################
+[*] Starting cracking Redis password for 104.40.83.229 using lower.txt Wordlist [*] 
+[*] Redis bruter [*]
+[!] Start Time : 2022-04-22 16:14:19.143156 [!]
+Percentage : 0.0% | Estimated Time : 0:00:00
+Percentage : 0.000% | Estimated Time : 0:00:00
+Percentage : 0.000% | Estimated Time : 0:00:00
+Percentage : 0.001% | Estimated Time : 0:00:00
+Percentage : 0.001% | Estimated Time : 0:00:00
+Percentage : 0.001% | Estimated Time : 0:00:00
+Percentage : 0.002% | Estimated Time : 0:00:00
+Percentage : 0.002% | Estimated Time : 0:00:00
+Percentage : 0.002% | Estimated Time : 0:00:00
+Percentage : 0.003% | Estimated Time : 0:00:00
 
+```
 # Requirements 
 pip install -r requirements.txt
 # Help 
